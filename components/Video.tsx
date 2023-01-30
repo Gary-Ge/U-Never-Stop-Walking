@@ -3,7 +3,7 @@ import React from "react";
 const Video: React.FC = () => {
   return (
     <div className="vdo-container">
-        <video autoPlay loop muted plays-inline className="back-video">
+        <video autoPlay loop muted plays-inline={true} className="back-video">
             <source src="video.mp4" type="video/webm" />
         </video>
         <div className="content">
