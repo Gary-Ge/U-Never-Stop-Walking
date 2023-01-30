@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>U Never Stop Walking</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
         }
+
         body {
             overflow-x: hidden;
         }
@@ -40,6 +42,12 @@
             display: inline-block;
         }
 
+        @media (max-width: 1200px) {
+            nav ul li {
+                display: none;
+            }
+        }
+
         nav ul li a {
             text-decoration: none;
             color: white;
@@ -49,15 +57,73 @@
             border-bottom: 2px solid transparent;
             transition: .4s;
         }
+
         nav ul li:not(:last-child) a:hover,
-        nav ul li:not(:last-child) a:focus{
+        nav ul li:not(:last-child) a:focus {
             border-bottom: 2px solid white;
         }
+
         nav ul li.btn a {
             background-color: skyblue;
-            color:black;
-            border:1px solid #fcfcfc;
+            color: black;
+            border: 1px solid #fcfcfc;
             padding: 9px 20px;
+        }
+
+        .content {
+           text-align: center; 
+           border-radius: 20px;
+           width: 300px;
+           height: 350px;
+           position: absolute;
+           top: 10%;
+           left: 40vw;
+           z-index: 2;
+           background: transparent;
+        }
+        .content h1{
+            color: #fff;
+            font-size: 200px;
+            font-weight:600;
+            padding-left: -20px;
+            background: transparent;
+        }
+        .content h2{
+            color: #fff;
+            font-size: 35px;
+            font-weight:600;
+            background: transparent;
+        }
+        .content h3{
+            color: #fff;
+            font-size: 35px;
+            font-weight:600;
+            background: transparent;
+        }
+        .content a{
+            text-decoration: none;
+            display: inline-block;
+            color:#fff;
+            font-size: 24px;
+            border: 2px solid #fff;
+            padding: 14px 70px;
+            border-radius: 50px;
+            margin-top: 20px;
+            background: transparent;
+        }
+
+        .vdo-container {
+            position: relative;
+            width: 100vw;
+            aspect-ratio: 16 / 9;
+        }
+
+        .back-video {
+            position: relative;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            width: 100%;
         }
     </style>
 </head>
@@ -78,11 +144,23 @@
                         <li><a href="#">Storys</a></li>
                         <li><a href="#">Credits</a></li>
                         <li><a href="#">Download</a></li>
-                        <li class="btn"><a href="#">Play Now</a></li>
+                        <li class="btn"><a href="#">Sign In</a></li>
                     </ul>
                 </nav>
             </header>
-        <!--header end-->
+            <!--header end-->
+        </div>
+
+        <div class="vdo-container">
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            <div class="content">
+                <h1>U</h1>
+                <h2>NEVER</h2>
+                <h3>STOP WALKING</h3>
+                <a href="#">PLAY FOR FREE</a>
+            </div>
         </div>
     </section>
 </body>
